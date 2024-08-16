@@ -1,0 +1,2 @@
+D:\Lidar_test\Lidar_test\x64\Debug\Lidar_test.exe
+E:\Code\Lidar_test\x64\Debug\Lidar_test.exe
