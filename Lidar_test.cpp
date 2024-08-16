@@ -116,7 +116,7 @@ void Lidar_test::on_ComboBox_View_Changed()
 		this->cloud_viewer->setCameraPosition(0, 0, 80, 0, 1, 0);
 		break;
 	case 1:	// Special View
-		this->cloud_viewer->setCameraPosition(-17.3, 1.125, 1.51408, 0.0893246, 0.0345669, 0.995403);
+		this->cloud_viewer->setCameraPosition(-5.35, -0.220377, 1.14, 0.1823246, 0.1045669, 0.975403);
 		break;
 	}
 	qDebug() << "comboBox current index: " << this->ui.comboBox_View->currentIndex() << endl;
