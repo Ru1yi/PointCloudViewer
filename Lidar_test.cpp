@@ -1,15 +1,14 @@
-/**************************************************************************
+ï»¿/**************************************************************************
 
-Copyright:Invent
+Copyright Â© 2024-, SuZhou Invent Precision Machining CO.,Ltd All Rights Reserved
 
 Author: Ru1yi
 
 Date:2024-08-17
 
-Description:Provide  functions  to connect Oracle
+Description: Point Cloud Visualization Software 
 
 **************************************************************************/
-
 #include "Lidar_test.h"
 
 Lidar_test::Lidar_test(QWidget* parent)
@@ -47,7 +46,7 @@ Lidar_test::Lidar_test(QWidget* parent)
 	resize(mainLayout->sizeHint());
 
 	// Initialize params
-	this->settings = new QSettings("config.ini", QSettings::IniFormat);//¹¹½¨º¯Êý
+	this->settings = new QSettings("config.ini", QSettings::IniFormat);//æž„å»ºå‡½æ•°
 	this->folder_path = settings->value("params/folder_path").toString().toStdString();
 	QDir directory(QString::fromStdString(folder_path));
 	QStringList files = directory.entryList(QStringList() << "*.pcd", QDir::Files);

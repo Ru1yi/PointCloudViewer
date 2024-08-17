@@ -1,3 +1,15 @@
+﻿/**************************************************************************
+
+Copyright © 2024-, SuZhou Invent Precision Machining CO.,Ltd All Rights Reserved
+
+Author: Ru1yi
+
+Date:2024-08-17
+
+Description: Point Cloud Visualization Software Headers
+
+**************************************************************************/
+
 #pragma once
 
 //#include <QtWidgets/QMainWindow>
