@@ -1,0 +1,48 @@
+Generic Warning: In D:\VTK-9.1.0\Rendering\OpenGL2\vtkOpenGLPolyDataMapper.cxx, line 307
+vtkOpenGLPolyDataMapper::GetVertexShaderCode was deprecated for VTK 9.0 and will be removed in a future version.  Use vtkOpenGLShaderProperty::GetVertexShaderCode instead.
+
+
+Generic Warning: In D:\VTK-9.1.0\Rendering\OpenGL2\vtkOpenGLPolyDataMapper.cxx, line 299
+vtkOpenGLPolyDataMapper::SetVertexShaderCode was deprecated for VTK 9.0 and will be removed in a future version.  Use vtkOpenGLShaderProperty::SetVertexShaderCode instead.
+
+
+Generic Warning: In D:\VTK-9.1.0\Rendering\OpenGL2\vtkOpenGLPolyDataMapper.cxx, line 337
+vtkOpenGLPolyDataMapper::GetGeometryShaderCode was deprecated for VTK 9.0 and will be removed in a future version.  Use vtkOpenGLShaderProperty::GetGeometryShaderCode instead.
+
+
+Generic Warning: In D:\VTK-9.1.0\Rendering\OpenGL2\vtkOpenGLPolyDataMapper.cxx, line 329
+vtkOpenGLPolyDataMapper::SetGeometryShaderCode was deprecated for VTK 9.0 and will be removed in a future version.  Use vtkOpenGLShaderProperty::SetGeometryShaderCode instead.
+
+
+Generic Warning: In D:\VTK-9.1.0\Rendering\OpenGL2\vtkOpenGLPolyDataMapper.cxx, line 322
+vtkOpenGLPolyDataMapper::GetFragmentShaderCode was deprecated for VTK 9.0 and will be removed in a future version.  Use vtkOpenGLShaderProperty::GetFragmentShaderCode instead.
+
+
+Generic Warning: In D:\VTK-9.1.0\Rendering\OpenGL2\vtkOpenGLPolyDataMapper.cxx, line 314
+vtkOpenGLPolyDataMapper::SetFragmentShaderCode was deprecated for VTK 9.0 and will be removed in a future version.  Use vtkOpenGLShaderProperty::SetFragmentShaderCode instead.
+
+
+Generic Warning: In D:\VTK-9.1.0\Rendering\OpenGL2\vtkOpenGLPolyDataMapper.cxx, line 307
+vtkOpenGLPolyDataMapper::GetVertexShaderCode was deprecated for VTK 9.0 and will be removed in a future version.  Use vtkOpenGLShaderProperty::GetVertexShaderCode instead.
+
+
+Generic Warning: In D:\VTK-9.1.0\Rendering\OpenGL2\vtkOpenGLPolyDataMapper.cxx, line 299
+vtkOpenGLPolyDataMapper::SetVertexShaderCode was deprecated for VTK 9.0 and will be removed in a future version.  Use vtkOpenGLShaderProperty::SetVertexShaderCode instead.
+
+
+Generic Warning: In D:\VTK-9.1.0\Rendering\OpenGL2\vtkOpenGLPolyDataMapper.cxx, line 337
+vtkOpenGLPolyDataMapper::GetGeometryShaderCode was deprecated for VTK 9.0 and will be removed in a future version.  Use vtkOpenGLShaderProperty::GetGeometryShaderCode instead.
+
+
+Generic Warning: In D:\VTK-9.1.0\Rendering\OpenGL2\vtkOpenGLPolyDataMapper.cxx, line 329
+vtkOpenGLPolyDataMapper::SetGeometryShaderCode was deprecated for VTK 9.0 and will be removed in a future version.  Use vtkOpenGLShaderProperty::SetGeometryShaderCode instead.
+
+
+Generic Warning: In D:\VTK-9.1.0\Rendering\OpenGL2\vtkOpenGLPolyDataMapper.cxx, line 322
+vtkOpenGLPolyDataMapper::GetFragmentShaderCode was deprecated for VTK 9.0 and will be removed in a future version.  Use vtkOpenGLShaderProperty::GetFragmentShaderCode instead.
+
+
+Generic Warning: In D:\VTK-9.1.0\Rendering\OpenGL2\vtkOpenGLPolyDataMapper.cxx, line 314
+vtkOpenGLPolyDataMapper::SetFragmentShaderCode was deprecated for VTK 9.0 and will be removed in a future version.  Use vtkOpenGLShaderProperty::SetFragmentShaderCode instead.
+
+

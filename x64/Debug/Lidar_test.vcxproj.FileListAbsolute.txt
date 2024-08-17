@@ -1,2 +1,3 @@
 D:\Lidar_test\Lidar_test\x64\Debug\Lidar_test.exe
 E:\Code\Lidar_test\x64\Debug\Lidar_test.exe
+E:\Code\A_Github_Repo\PointCloudViewer\x64\Debug\Lidar_test.exe

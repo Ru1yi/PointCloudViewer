@@ -35,12 +35,13 @@ public:
     QHBoxLayout *horizontalLayout;
     QLabel *label;
     QLineEdit *lineEdit_color;
-    QPushButton *pushButton;
+    QPushButton *pushButton_ChangeColor;
     QWidget *horizontalLayoutWidget_2;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_2;
     QComboBox *comboBox_View;
-    QCheckBox *checkBox_loop;
+    QCheckBox *checkBox_Loop;
+    QCheckBox *checkBox_Grid;
     QMenuBar *menuBar;
     QMenu *menu;
     QToolBar *mainToolBar;
@@ -77,15 +78,15 @@ public:
 
         horizontalLayout->addWidget(lineEdit_color);
 
-        pushButton = new QPushButton(horizontalLayoutWidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton_ChangeColor = new QPushButton(horizontalLayoutWidget);
+        pushButton_ChangeColor->setObjectName(QString::fromUtf8("pushButton_ChangeColor"));
         QFont font1;
         font1.setFamily(QString::fromUtf8("Times New Roman"));
         font1.setPointSize(12);
-        pushButton->setFont(font1);
-        pushButton->setFlat(false);
+        pushButton_ChangeColor->setFont(font1);
+        pushButton_ChangeColor->setFlat(false);
 
-        horizontalLayout->addWidget(pushButton);
+        horizontalLayout->addWidget(pushButton_ChangeColor);
 
         horizontalLayoutWidget_2 = new QWidget(centralWidget);
         horizontalLayoutWidget_2->setObjectName(QString::fromUtf8("horizontalLayoutWidget_2"));
@@ -118,10 +119,14 @@ public:
 
         horizontalLayout_2->addWidget(comboBox_View);
 
-        checkBox_loop = new QCheckBox(centralWidget);
-        checkBox_loop->setObjectName(QString::fromUtf8("checkBox_loop"));
-        checkBox_loop->setGeometry(QRect(490, 20, 91, 31));
-        checkBox_loop->setFont(font);
+        checkBox_Loop = new QCheckBox(centralWidget);
+        checkBox_Loop->setObjectName(QString::fromUtf8("checkBox_Loop"));
+        checkBox_Loop->setGeometry(QRect(490, 20, 91, 41));
+        checkBox_Loop->setFont(font);
+        checkBox_Grid = new QCheckBox(centralWidget);
+        checkBox_Grid->setObjectName(QString::fromUtf8("checkBox_Grid"));
+        checkBox_Grid->setGeometry(QRect(10, 190, 91, 41));
+        checkBox_Grid->setFont(font);
         Lidar_testClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(Lidar_testClass);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
@@ -139,10 +144,11 @@ public:
         menuBar->addAction(menu->menuAction());
 
         retranslateUi(Lidar_testClass);
-        QObject::connect(pushButton, SIGNAL(clicked()), Lidar_testClass, SLOT(on_PushButton_Clicked()));
+        QObject::connect(pushButton_ChangeColor, SIGNAL(clicked()), Lidar_testClass, SLOT(on_PushButton_ChangeColor_Clicked()));
         QObject::connect(comboBox_View, SIGNAL(currentIndexChanged(int)), Lidar_testClass, SLOT(on_ComboBox_View_Changed()));
+        QObject::connect(checkBox_Grid, SIGNAL(stateChanged(int)), Lidar_testClass, SLOT(on_CheckBox_Grid_stateChanged()));
 
-        pushButton->setDefault(false);
+        pushButton_ChangeColor->setDefault(false);
 
 
         QMetaObject::connectSlotsByName(Lidar_testClass);
@@ -152,12 +158,13 @@ public:
     {
         Lidar_testClass->setWindowTitle(QCoreApplication::translate("Lidar_testClass", "Lidar_test", nullptr));
         label->setText(QCoreApplication::translate("Lidar_testClass", "Current Color Field\357\274\232", nullptr));
-        pushButton->setText(QCoreApplication::translate("Lidar_testClass", "Change", nullptr));
+        pushButton_ChangeColor->setText(QCoreApplication::translate("Lidar_testClass", "Change", nullptr));
         label_2->setText(QCoreApplication::translate("Lidar_testClass", "Current View\357\274\232", nullptr));
         comboBox_View->setItemText(0, QCoreApplication::translate("Lidar_testClass", "Top View", nullptr));
         comboBox_View->setItemText(1, QCoreApplication::translate("Lidar_testClass", "Special View", nullptr));
 
-        checkBox_loop->setText(QCoreApplication::translate("Lidar_testClass", "loop", nullptr));
+        checkBox_Loop->setText(QCoreApplication::translate("Lidar_testClass", "loop", nullptr));
+        checkBox_Grid->setText(QCoreApplication::translate("Lidar_testClass", "grid", nullptr));
         menu->setTitle(QCoreApplication::translate("Lidar_testClass", "Invent PointCloud Viewer V1.0", nullptr));
     } // retranslateUi
 

@@ -45,7 +45,7 @@
       <widget class="QLineEdit" name="lineEdit_color"/>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="pushButton_ChangeColor">
        <property name="font">
         <font>
          <family>Times New Roman</family>
@@ -115,13 +115,13 @@
      </item>
     </layout>
    </widget>
-   <widget class="QCheckBox" name="checkBox_loop">
+   <widget class="QCheckBox" name="checkBox_Loop">
     <property name="geometry">
      <rect>
       <x>490</x>
       <y>20</y>
       <width>91</width>
-      <height>31</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -133,6 +133,26 @@
     </property>
     <property name="text">
      <string>loop</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_Grid">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>190</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>14</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>grid</string>
     </property>
    </widget>
   </widget>
@@ -168,10 +188,10 @@
  </resources>
  <connections>
   <connection>
-   <sender>pushButton</sender>
+   <sender>pushButton_ChangeColor</sender>
    <signal>clicked()</signal>
    <receiver>Lidar_testClass</receiver>
-   <slot>on_PushButton_Clicked()</slot>
+   <slot>on_PushButton_ChangeColor_Clicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>611</x>
@@ -199,11 +219,26 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>checkBox_Grid</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>Lidar_testClass</receiver>
+   <slot>on_CheckBox_Grid_stateChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>42</x>
+     <y>236</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>42</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
-  <slot>PushButtonClicked()</slot>
-  <slot>on_PushButton_ChangeView_Clicked()</slot>
-  <slot>on_PushButton_Clicked()</slot>
+  <slot>on_PushButton_ChangeColor_Clicked()</slot>
   <slot>on_ComboBox_View_Changed()</slot>
+  <slot>on_CheckBox_Grid_stateChanged()</slot>
  </slots>
 </ui>

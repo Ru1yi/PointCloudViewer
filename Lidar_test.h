@@ -19,6 +19,10 @@
 #include <pcl/io/pcd_io.h>
 #include <pcl/visualization/pcl_visualizer.h>
 
+#include <vtkFileOutputWindow.h>
+#include <vtkOutputWindow.h>
+
+
 typedef pcl::PointXYZI PointT;
 typedef pcl::PointCloud<PointT> PointCloudT;
 typedef pcl::visualization::PCLVisualizer PCLViewer;
@@ -36,9 +40,18 @@ public:
 	void Lidar_test::loadNextPCD();
 
 private slots:	// slot func
-	void on_PushButton_Clicked();
-	//void on_PushButton_ChangeView_Clicked();
+	/**
+	* @brief Change color field when pushbutton clicked
+	*/
+	void on_PushButton_ChangeColor_Clicked();
+	/**
+	* @brief Change view when combobox changed
+	*/
 	void on_ComboBox_View_Changed();
+	/**
+	* @brief Add or remove grid when checkbox state changed
+	*/
+	void on_CheckBox_Grid_stateChanged();
 
 private:
 	Ui::Lidar_testClass ui;
@@ -47,6 +60,12 @@ private:
 	QStringList files;
 	int currentFileIndex;
 	QTimer* timer;
-	std::string folder_path;
-	std::string axis;
+	std::string folder_path;	//pcd folder path
+	std::string axis;	// color field
+
+	const float lidar_height = 2.0641;
+
+	// grid params
+	int grid_size = 10;
+	int grid_spacing = 1;
 };

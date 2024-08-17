@@ -1,3 +1,15 @@
+/**************************************************************************
+
+Copyright:Invent
+
+Author: Ru1yi
+
+Date:2024-08-17
+
+Description:Provide  functions  to connect Oracle
+
+**************************************************************************/
+
 #include "Lidar_test.h"
 
 Lidar_test::Lidar_test(QWidget* parent)
@@ -6,10 +18,20 @@ Lidar_test::Lidar_test(QWidget* parent)
 	//ui->setupUi(this);
 	ui.setupUi(this);
 
+	// Hide VTK output window
+	vtkNew<vtkFileOutputWindow> fileOutputWindow;
+	fileOutputWindow->SetFileName("vtkoutput.txt");
+	vtkOutputWindow::SetInstance(fileOutputWindow);
+
 	// Create PCLViewer Obj & set the title
 	this->cloud_viewer.reset(new PCLViewer("3D Viewer"));
 	this->cloud_viewer->setShowFPS(false);
-	this->cloud_viewer->setCameraPosition(0, 0, 80, 0, 1, 0);	//Top View
+
+	// Initialize view
+	this->cloud_viewer->setCameraPosition(0, 0, 80, 0, 1, 0);	// View
+
+	// Add coordinate system
+	this->cloud_viewer->addCoordinateSystem(1);
 
 	// Embed the rendering window of cloud_viewer into QWidget
 	auto viewerWinId = QWindow::fromWinId((WId)cloud_viewer->getRenderWindow()->GetGenericWindowId());
@@ -43,7 +65,7 @@ Lidar_test::Lidar_test(QWidget* parent)
 	this->ui.lineEdit_color->setText("intensity");
 
 	// Initialize checkBox_loop
-	this->ui.checkBox_loop->setChecked(true);
+	this->ui.checkBox_Loop->setChecked(true);
 
 	// Initialize and start timer
 	timer = new QTimer(this);
@@ -53,9 +75,9 @@ Lidar_test::Lidar_test(QWidget* parent)
 
 void Lidar_test::loadNextPCD()
 {
-	qDebug() << "currentFileIndex: " << currentFileIndex << endl;
+	//qDebug() << "currentFileIndex: " << currentFileIndex << endl;
 	if (currentFileIndex >= files.size()) {
-		if (this->ui.checkBox_loop->isChecked()) {
+		if (this->ui.checkBox_Loop->isChecked()) {
 			this->currentFileIndex = 0;
 		}
 		else {
@@ -85,7 +107,7 @@ void Lidar_test::loadNextPCD()
 	currentFileIndex++;
 }
 
-void Lidar_test::on_PushButton_Clicked()
+void Lidar_test::on_PushButton_ChangeColor_Clicked()
 {
 	qDebug() << "Change color field!" << endl;
 	if ("z" == this->axis) {
@@ -104,11 +126,6 @@ void Lidar_test::on_PushButton_Clicked()
 	qDebug() << "- view: " << cam[0].view[0] << " " << cam[0].view[1] << " " << cam[0].view[2] << endl;
 }
 
-//void Lidar_test::on_PushButton_ChangeView_Clicked()
-//{
-//	this->cloud_viewer->setCameraPosition(-17.3, 1.125, 1.51408, 0.0893246, 0.0345669, 0.995403);
-//}
-
 void Lidar_test::on_ComboBox_View_Changed()
 {
 	switch (this->ui.comboBox_View->currentIndex()) {
@@ -120,6 +137,29 @@ void Lidar_test::on_ComboBox_View_Changed()
 		break;
 	}
 	qDebug() << "comboBox current index: " << this->ui.comboBox_View->currentIndex() << endl;
+}
+
+void Lidar_test::on_CheckBox_Grid_stateChanged()
+{
+	if (this->ui.checkBox_Grid->isChecked()) {
+		// Add horizontal grid
+		for (int x = -5; x <= this->grid_size - 5; x += this->grid_spacing) {
+			this->cloud_viewer->addLine(pcl::PointXYZ(x, -5, -this->lidar_height), pcl::PointXYZ(x, this->grid_size - 5, -this->lidar_height), 1.0, 1.0, 1.0, "line_x_" + std::to_string(x));
+			/*if (this->cloud_viewer->contains("line_x_" + std::to_string(x)))
+				qDebug() << QString::fromStdString("line_x_" + std::to_string(x) + " added successfully") << endl;*/
+		}
+		for (int y = -5; y <= this->grid_size - 5; y += this->grid_spacing)
+			this->cloud_viewer->addLine(pcl::PointXYZ(-5, y, -this->lidar_height), pcl::PointXYZ(this->grid_size - 5, y, -this->lidar_height), 1.0, 1.0, 1.0, "line_y_" + std::to_string(y));
+	}
+	else
+	{
+		// Remove horizontal grid
+		for (int x = -5; x <= this->grid_size - 5; x += this->grid_spacing)
+			this->cloud_viewer->removeShape("line_x_" + std::to_string(x));
+		for (int y = -5; y <= this->grid_size - 5; y += this->grid_spacing)
+			this->cloud_viewer->removeShape("line_y_" + std::to_string(y));
+	}
+
 }
 
 Lidar_test::~Lidar_test()
