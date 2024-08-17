@@ -58,6 +58,10 @@ private slots:	// slot func
 	* @brief Add or remove grid when checkbox state changed
 	*/
 	void on_CheckBox_Grid_stateChanged();
+	/**
+	* @brief Get current view when pushbutton clicked
+	*/
+	void on_PushButton_GetCurrentView_Clicked();
 
 private:
 	// Qt member variables

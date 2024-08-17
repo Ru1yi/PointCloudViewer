@@ -42,7 +42,7 @@ Lidar_test::Lidar_test(QWidget* parent)
 	mainLayout->addWidget(widget);
 
 	centralWidget()->setLayout(mainLayout);
-	widget->setMinimumSize(1920, 1080);
+	widget->setMinimumSize(1280, 720);
 	resize(mainLayout->sizeHint());
 
 	// Initialize params
@@ -117,12 +117,6 @@ void Lidar_test::on_PushButton_ChangeColor_Clicked()
 		this->axis = "z";
 		this->ui.lineEdit_color->setText("z");
 	}
-	// Get current camera parameters
-	std::vector<pcl::visualization::Camera> cam;
-	this->cloud_viewer->getCameras(cam);
-	qDebug() << "Cam:" << endl;
-	qDebug() << "- pos: " << cam[0].pos[0] << " " << cam[0].pos[1] << " " << cam[0].pos[2] << endl;
-	qDebug() << "- view: " << cam[0].view[0] << " " << cam[0].view[1] << " " << cam[0].view[2] << endl;
 }
 
 void Lidar_test::on_ComboBox_View_Changed()
@@ -159,6 +153,20 @@ void Lidar_test::on_CheckBox_Grid_stateChanged()
 			this->cloud_viewer->removeShape("line_y_" + std::to_string(y));
 	}
 
+}
+
+void Lidar_test::on_PushButton_GetCurrentView_Clicked()
+{
+	// Get current camera parameters
+	std::vector<pcl::visualization::Camera> cam;
+	this->cloud_viewer->getCameras(cam);
+
+	std::string pos = "- pos: " + std::to_string(cam[0].pos[0]) + "," + std::to_string(cam[0].pos[1]) + "," + std::to_string(cam[0].pos[2]);
+	std::string view = "- view: " + std::to_string(cam[0].view[0]) + "," + std::to_string(cam[0].view[1]) + "," + std::to_string(cam[0].view[2]);
+	
+	QFont font("Times New Roman", 12); // set Font & Size
+	this->ui.textEdit_GetCurrentView->setFont(font);
+	this->ui.textEdit_GetCurrentView->setPlainText(QString::fromStdString("Cam: \n") + QString::fromStdString(pos) +"\n" + QString::fromStdString(view));
 }
 
 Lidar_test::~Lidar_test()

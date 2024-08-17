@@ -119,6 +119,9 @@
   <ItemGroup>
     <ClInclude Include="x64\Debug\uic\ui_Lidar_test.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="config.ini" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
     <Import Project="$(QtMsBuild)\qt.targets" />

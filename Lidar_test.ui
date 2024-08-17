@@ -17,8 +17,8 @@
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>80</y>
+      <x>20</x>
+      <y>220</y>
       <width>631</width>
       <height>101</height>
      </rect>
@@ -50,6 +50,7 @@
         <font>
          <family>Times New Roman</family>
          <pointsize>12</pointsize>
+         <bold>true</bold>
         </font>
        </property>
        <property name="text">
@@ -68,10 +69,10 @@
    <widget class="QWidget" name="horizontalLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>471</width>
-      <height>80</height>
+      <x>20</x>
+      <y>80</y>
+      <width>911</width>
+      <height>141</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -113,47 +114,68 @@
        </item>
       </widget>
      </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QPushButton" name="pushButton_GetCurrentView">
+         <property name="font">
+          <font>
+           <family>Times New Roman</family>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Get Current View</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTextEdit" name="textEdit_GetCurrentView"/>
+       </item>
+      </layout>
+     </item>
     </layout>
    </widget>
-   <widget class="QCheckBox" name="checkBox_Loop">
+   <widget class="QWidget" name="horizontalLayoutWidget_3">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>20</y>
-      <width>91</width>
-      <height>41</height>
+      <x>20</x>
+      <y>0</y>
+      <width>271</width>
+      <height>80</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <family>Times New Roman</family>
-      <pointsize>14</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>loop</string>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="checkBox_Grid">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>190</y>
-      <width>91</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Times New Roman</family>
-      <pointsize>14</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>grid</string>
-    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QCheckBox" name="checkBox_Loop">
+       <property name="font">
+        <font>
+         <family>Times New Roman</family>
+         <pointsize>14</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>loop</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBox_Grid">
+       <property name="font">
+        <font>
+         <family>Times New Roman</family>
+         <pointsize>10</pointsize>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>grid</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -166,6 +188,12 @@
     </rect>
    </property>
    <widget class="QMenu" name="menu">
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="title">
      <string>Invent PointCloud Viewer V1.0</string>
     </property>
@@ -194,8 +222,8 @@
    <slot>on_PushButton_ChangeColor_Clicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>611</x>
-     <y>163</y>
+     <x>631</x>
+     <y>303</y>
     </hint>
     <hint type="destinationlabel">
      <x>482</x>
@@ -210,8 +238,8 @@
    <slot>on_ComboBox_View_Changed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>328</x>
-     <y>68</y>
+     <x>211</x>
+     <y>178</y>
     </hint>
     <hint type="destinationlabel">
      <x>329</x>
@@ -226,12 +254,28 @@
    <slot>on_CheckBox_Grid_stateChanged()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>42</x>
-     <y>236</y>
+     <x>190</x>
+     <y>75</y>
     </hint>
     <hint type="destinationlabel">
      <x>42</x>
      <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_GetCurrentView</sender>
+   <signal>clicked()</signal>
+   <receiver>Lidar_testClass</receiver>
+   <slot>on_PushButton_GetCurrentView_Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>515</x>
+     <y>120</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>574</x>
+     <y>61</y>
     </hint>
    </hints>
   </connection>
@@ -240,5 +284,6 @@
   <slot>on_PushButton_ChangeColor_Clicked()</slot>
   <slot>on_ComboBox_View_Changed()</slot>
   <slot>on_CheckBox_Grid_stateChanged()</slot>
+  <slot>on_PushButton_GetCurrentView_Clicked()</slot>
  </slots>
 </ui>
