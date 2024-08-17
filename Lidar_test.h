@@ -1,34 +1,28 @@
 #pragma once
 
-#include <QtWidgets/QMainWindow>
+//#include <QtWidgets/QMainWindow>
 #include "ui_Lidar_test.h"
 
-
-#include <QMainWindow>
+// Qt Headers
 #include <QWindow>
-#include <QHBoxLayout>
-
 #include <QDir>
-#include <QTimer>
+#include <QTimer>	
 #include <QDebug>
-#include <QSplitter>
+#include <QSettings>	// Read ini files
 
+// 3rd Party Headers
 #include <vtkGenericOpenGLRenderWindow.h>
+#include <vtkFileOutputWindow.h>
+#include <vtkOutputWindow.h>
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
 #include <pcl/io/pcd_io.h>
 #include <pcl/visualization/pcl_visualizer.h>
 
-#include <vtkFileOutputWindow.h>
-#include <vtkOutputWindow.h>
-
-
 typedef pcl::PointXYZI PointT;
 typedef pcl::PointCloud<PointT> PointCloudT;
 typedef pcl::visualization::PCLVisualizer PCLViewer;
 typedef std::shared_ptr<PointCloudT> PointCloudPtr;
-
-
 
 class Lidar_test : public QMainWindow
 {
@@ -54,18 +48,23 @@ private slots:	// slot func
 	void on_CheckBox_Grid_stateChanged();
 
 private:
+	// Qt member variables
 	Ui::Lidar_testClass ui;
+	QStringList files;
+	QTimer* timer;
+	QSettings* settings;
+
+	// PCL visualizer member variables
 	PointCloudPtr cloudptr;
 	PCLViewer::Ptr cloud_viewer;
-	QStringList files;
-	int currentFileIndex;
-	QTimer* timer;
-	std::string folder_path;	//pcd folder path
 	std::string axis;	// color field
 
-	const float lidar_height = 2.0641;
+	// variables
+	int currentFileIndex;
+	std::string folder_path;	//pcd folder path	
+    float lidar_height;
 
-	// grid params
+	// Grid params
 	int grid_size = 10;
 	int grid_spacing = 1;
 };

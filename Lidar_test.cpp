@@ -46,13 +46,13 @@ Lidar_test::Lidar_test(QWidget* parent)
 	widget->setMinimumSize(1920, 1080);
 	resize(mainLayout->sizeHint());
 
-	// Initialize folder path
-	//this->folder_path = "E:/Dataset/weilai/pcd/pcd/";
-	this->folder_path = "E:/Dataset/weilai/pcd_selected/";
+	// Initialize params
+	this->settings = new QSettings("config.ini", QSettings::IniFormat);//¹¹½¨º¯Êý
+	this->folder_path = settings->value("params/folder_path").toString().toStdString();
 	QDir directory(QString::fromStdString(folder_path));
 	QStringList files = directory.entryList(QStringList() << "*.pcd", QDir::Files);
-
-	qDebug() << "The files are:" << files;
+	//qDebug() << "The files are:" << files;
+	this->lidar_height = settings->value("params/lidar_height").toFloat();
 
 	// Initialize files list and index
 	this->files = files;
