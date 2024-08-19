@@ -111,12 +111,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <QtRcc Include="Lidar_test.qrc" />
+    <QtUic Include="AdjustPC.ui" />
     <QtUic Include="Lidar_test.ui" />
     <QtMoc Include="Lidar_test.h" />
+    <ClCompile Include="AdjustPC.cpp" />
     <ClCompile Include="Lidar_test.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="AdjustPC.h" />
+    <ClInclude Include="x64\Debug\uic\ui_AdjustPC.h" />
     <ClInclude Include="x64\Debug\uic\ui_Lidar_test.h" />
   </ItemGroup>
   <ItemGroup>

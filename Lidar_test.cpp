@@ -6,7 +6,7 @@ Author: Ru1yi
 
 Date:2024-08-17
 
-Description: Point Cloud Visualization Software 
+Description: Point Cloud Visualization Software
 
 **************************************************************************/
 #include "Lidar_test.h"
@@ -40,10 +40,9 @@ Lidar_test::Lidar_test(QWidget* parent)
 	QHBoxLayout* mainLayout = new QHBoxLayout;
 	mainLayout->addStretch();
 	mainLayout->addWidget(widget);
-
 	centralWidget()->setLayout(mainLayout);
 	widget->setMinimumSize(1280, 720);
-	resize(mainLayout->sizeHint());
+	//resize(mainLayout->sizeHint());
 
 	// Initialize params
 	this->settings = new QSettings("config.ini", QSettings::IniFormat);//构建函数
@@ -163,10 +162,23 @@ void Lidar_test::on_PushButton_GetCurrentView_Clicked()
 
 	std::string pos = "- pos: " + std::to_string(cam[0].pos[0]) + "," + std::to_string(cam[0].pos[1]) + "," + std::to_string(cam[0].pos[2]);
 	std::string view = "- view: " + std::to_string(cam[0].view[0]) + "," + std::to_string(cam[0].view[1]) + "," + std::to_string(cam[0].view[2]);
-	
+
 	QFont font("Times New Roman", 12); // set Font & Size
 	this->ui.textEdit_GetCurrentView->setFont(font);
-	this->ui.textEdit_GetCurrentView->setPlainText(QString::fromStdString("Cam: \n") + QString::fromStdString(pos) +"\n" + QString::fromStdString(view));
+	this->ui.textEdit_GetCurrentView->setReadOnly(true);
+	this->ui.textEdit_GetCurrentView->setPlainText(QString::fromStdString("Cam: \n") + QString::fromStdString(pos) + "\n" + QString::fromStdString(view));
+}
+
+void Lidar_test::on_PushButton_AdjustPC_Clicked()
+{
+	SubWidget_AdjustPC->setWindowTitle("Adjust PointCloud Console");
+	connect(SubWidget_AdjustPC, SIGNAL(AdjustPC::sendSignal_lineEdit_x_returnPressed(QString)), this, SLOT(receiveSignal_lineEdit_x_returnPressed(QString)));
+	SubWidget_AdjustPC->show();
+}
+
+void Lidar_test::receiveSignal_lineEdit_x_returnPressed(QString lineEdit_x_text)
+{
+	qDebug() << "lineEdit_x_text: " << lineEdit_x_text << endl;
 }
 
 Lidar_test::~Lidar_test()

@@ -31,6 +31,9 @@ Description: Point Cloud Visualization Software Headers
 #include <pcl/io/pcd_io.h>
 #include <pcl/visualization/pcl_visualizer.h>
 
+// Sub window
+#include "AdjustPC.h"
+
 typedef pcl::PointXYZI PointT;
 typedef pcl::PointCloud<PointT> PointCloudT;
 typedef pcl::visualization::PCLVisualizer PCLViewer;
@@ -43,9 +46,12 @@ class Lidar_test : public QMainWindow
 public:
 	Lidar_test(QWidget* parent = nullptr);
 	~Lidar_test();
+	/**
+	* @brief load next pcd at a frequency of 10 Hz
+	*/
 	void Lidar_test::loadNextPCD();
 
-private slots:	// slot func
+private slots:	
 	/**
 	* @brief Change color field when pushbutton clicked
 	*/
@@ -62,6 +68,13 @@ private slots:	// slot func
 	* @brief Get current view when pushbutton clicked
 	*/
 	void on_PushButton_GetCurrentView_Clicked();
+	/**
+	* @brief Open adjust PC param window when pushbutton clicked
+	*/
+	void on_PushButton_AdjustPC_Clicked();
+
+	void receiveSignal_lineEdit_x_returnPressed(QString);
+
 
 private:
 	// Qt member variables
@@ -69,6 +82,9 @@ private:
 	QStringList files;
 	QTimer* timer;
 	QSettings* settings;
+
+	// Sub window
+	AdjustPC* SubWidget_AdjustPC = new AdjustPC;
 
 	// PCL visualizer member variables
 	PointCloudPtr cloudptr;

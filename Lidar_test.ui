@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1920</width>
+    <width>2260</width>
     <height>1080</height>
    </rect>
   </property>
@@ -166,8 +166,8 @@
        <property name="font">
         <font>
          <family>Times New Roman</family>
-         <pointsize>10</pointsize>
-         <bold>false</bold>
+         <pointsize>14</pointsize>
+         <bold>true</bold>
         </font>
        </property>
        <property name="text">
@@ -177,13 +177,39 @@
      </item>
     </layout>
    </widget>
+   <widget class="QPushButton" name="pushButton_ChangeColor_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>340</y>
+      <width>211</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Adjust PointCloud</string>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1920</width>
+     <width>2260</width>
      <height>17</height>
     </rect>
    </property>
@@ -195,8 +221,9 @@
      </font>
     </property>
     <property name="title">
-     <string>Invent PointCloud Viewer V1.0</string>
+     <string>INVENT PointCloud Viewer V1.0</string>
     </property>
+    <addaction name="actionopen"/>
    </widget>
    <addaction name="menu"/>
   </widget>
@@ -209,6 +236,11 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionopen">
+   <property name="text">
+    <string>open</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
@@ -279,11 +311,29 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton_ChangeColor_2</sender>
+   <signal>clicked()</signal>
+   <receiver>Lidar_testClass</receiver>
+   <slot>on_PushButton_AdjustPC_Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>167</x>
+     <y>393</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>162</x>
+     <y>429</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>on_PushButton_ChangeColor_Clicked()</slot>
   <slot>on_ComboBox_View_Changed()</slot>
   <slot>on_CheckBox_Grid_stateChanged()</slot>
   <slot>on_PushButton_GetCurrentView_Clicked()</slot>
+  <slot>on_PushButton_AdjustPC_Clicked()</slot>
+  <slot>on123()</slot>
  </slots>
 </ui>
