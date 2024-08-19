@@ -404,7 +404,7 @@
    <sender>lineEdit_x</sender>
    <signal>returnPressed()</signal>
    <receiver>AdjustPCClass</receiver>
-   <slot>on_lineEdit_x_returnPressed()</slot>
+   <slot>on_lineEdit_returnPressed()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>668</x>
@@ -416,8 +416,88 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>lineEdit_y</sender>
+   <signal>returnPressed()</signal>
+   <receiver>AdjustPCClass</receiver>
+   <slot>on_lineEdit_returnPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>699</x>
+     <y>266</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>723</x>
+     <y>93</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_z</sender>
+   <signal>returnPressed()</signal>
+   <receiver>AdjustPCClass</receiver>
+   <slot>on_lineEdit_returnPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>716</x>
+     <y>300</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>746</x>
+     <y>116</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_roll</sender>
+   <signal>returnPressed()</signal>
+   <receiver>AdjustPCClass</receiver>
+   <slot>on_lineEdit_returnPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>675</x>
+     <y>386</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>739</x>
+     <y>158</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_pitch</sender>
+   <signal>returnPressed()</signal>
+   <receiver>AdjustPCClass</receiver>
+   <slot>on_lineEdit_returnPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>710</x>
+     <y>404</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>748</x>
+     <y>183</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_yaw</sender>
+   <signal>returnPressed()</signal>
+   <receiver>AdjustPCClass</receiver>
+   <slot>on_lineEdit_returnPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>687</x>
+     <y>435</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>758</x>
+     <y>212</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
-  <slot>on_lineEdit_x_returnPressed()</slot>
+  <slot>on_lineEdit_returnPressed()</slot>
  </slots>
 </ui>

@@ -31,7 +31,7 @@ Description: Point Cloud Visualization Software Headers
 #include <pcl/io/pcd_io.h>
 #include <pcl/visualization/pcl_visualizer.h>
 
-// Sub window
+// Sub window Headers
 #include "AdjustPC.h"
 
 typedef pcl::PointXYZI PointT;
@@ -72,9 +72,16 @@ private slots:
 	* @brief Open adjust PC param window when pushbutton clicked
 	*/
 	void on_PushButton_AdjustPC_Clicked();
-
-	void receiveSignal_lineEdit_x_returnPressed(QString);
-
+	/**
+	* @brief Receive signal from AdjustPC and get the data
+	* @param1 lineEdit_x->text()
+	* @param2 lineEdit_y->text()
+	* @param3 lineEdit_z->text()
+	* @param4 lineEdit_roll->text()
+	* @param5 lineEdit_pitch->text()
+	* @param6 lineEdit_yaw->text()
+	*/
+	void receiveSignal_lineEdit_returnPressed(QString, QString, QString, QString, QString, QString);
 
 private:
 	// Qt member variables
@@ -83,7 +90,7 @@ private:
 	QTimer* timer;
 	QSettings* settings;
 
-	// Sub window
+	// Sub window Variables
 	AdjustPC* SubWidget_AdjustPC = new AdjustPC;
 
 	// PCL visualizer member variables
@@ -91,11 +98,19 @@ private:
 	PCLViewer::Ptr cloud_viewer;
 	std::string axis;	// color field
 
-	// variables
+	// PointCloud variables
+	double lidar_height;
+	double offset_x;
+	double offset_y;
+	double offset_z;
+	double offset_roll;
+	double offset_pitch;
+	double offset_yaw;
+
+	// I/O variables
 	int currentFileIndex;
 	std::string folder_path;	//pcd folder path	
-    float lidar_height;
-
+    
 	// Grid params
 	int grid_size = 10;
 	int grid_spacing = 1;

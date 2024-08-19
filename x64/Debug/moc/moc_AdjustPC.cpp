@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_AdjustPC_t {
     QByteArrayData data[4];
-    char stringdata0[74];
+    char stringdata0[70];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,13 +33,13 @@ struct qt_meta_stringdata_AdjustPC_t {
 static const qt_meta_stringdata_AdjustPC_t qt_meta_stringdata_AdjustPC = {
     {
 QT_MOC_LITERAL(0, 0, 8), // "AdjustPC"
-QT_MOC_LITERAL(1, 9, 35), // "sendSignal_lineEdit_x_returnP..."
-QT_MOC_LITERAL(2, 45, 0), // ""
-QT_MOC_LITERAL(3, 46, 27) // "on_lineEdit_x_returnPressed"
+QT_MOC_LITERAL(1, 9, 33), // "sendSignal_lineEdit_returnPre..."
+QT_MOC_LITERAL(2, 43, 0), // ""
+QT_MOC_LITERAL(3, 44, 25) // "on_lineEdit_returnPressed"
 
     },
-    "AdjustPC\0sendSignal_lineEdit_x_returnPressed\0"
-    "\0on_lineEdit_x_returnPressed"
+    "AdjustPC\0sendSignal_lineEdit_returnPressed\0"
+    "\0on_lineEdit_returnPressed"
 };
 #undef QT_MOC_LITERAL
 
@@ -57,13 +57,13 @@ static const uint qt_meta_data_AdjustPC[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   24,    2, 0x06 /* Public */,
+       1,    6,   24,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,   27,    2, 0x08 /* Private */,
+       3,    0,   37,    2, 0x08 /* Private */,
 
  // signals: parameters
-    QMetaType::Void, QMetaType::QString,    2,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,    2,    2,    2,    2,    2,    2,
 
  // slots: parameters
     QMetaType::Void,
@@ -77,15 +77,15 @@ void AdjustPC::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         auto *_t = static_cast<AdjustPC *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->sendSignal_lineEdit_x_returnPressed((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 1: _t->on_lineEdit_x_returnPressed(); break;
+        case 0: _t->sendSignal_lineEdit_returnPressed((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])),(*reinterpret_cast< QString(*)>(_a[4])),(*reinterpret_cast< QString(*)>(_a[5])),(*reinterpret_cast< QString(*)>(_a[6]))); break;
+        case 1: _t->on_lineEdit_returnPressed(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = void (AdjustPC::*)(QString );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&AdjustPC::sendSignal_lineEdit_x_returnPressed)) {
+            using _t = void (AdjustPC::*)(QString , QString , QString , QString , QString , QString );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&AdjustPC::sendSignal_lineEdit_returnPressed)) {
                 *result = 0;
                 return;
             }
@@ -134,9 +134,9 @@ int AdjustPC::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void AdjustPC::sendSignal_lineEdit_x_returnPressed(QString _t1)
+void AdjustPC::sendSignal_lineEdit_returnPressed(QString _t1, QString _t2, QString _t3, QString _t4, QString _t5, QString _t6)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t3))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t4))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t5))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t6))) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 QT_WARNING_POP

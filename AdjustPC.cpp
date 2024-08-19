@@ -1,14 +1,19 @@
 #include "AdjustPC.h"
 
-AdjustPC::AdjustPC(QWidget *parent)
+AdjustPC::AdjustPC(QWidget* parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
 }
 
-void AdjustPC::on_lineEdit_x_returnPressed()
+void AdjustPC::on_lineEdit_returnPressed()
 {
-	sendSignal_lineEdit_x_returnPressed(this->ui.lineEdit_x->text());
+	emit sendSignal_lineEdit_returnPressed(this->ui.lineEdit_x->text(),
+										    this->ui.lineEdit_y->text(),
+										    this->ui.lineEdit_z->text(),
+											this->ui.lineEdit_roll->text(),
+											this->ui.lineEdit_pitch->text(),
+											this->ui.lineEdit_yaw->text());
 }
 
 AdjustPC::~AdjustPC()

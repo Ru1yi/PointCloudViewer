@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Lidar_test_t {
     QByteArrayData data[8];
-    char stringdata0[208];
+    char stringdata0[206];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,7 +39,7 @@ QT_MOC_LITERAL(3, 46, 24), // "on_ComboBox_View_Changed"
 QT_MOC_LITERAL(4, 71, 29), // "on_CheckBox_Grid_stateChanged"
 QT_MOC_LITERAL(5, 101, 36), // "on_PushButton_GetCurrentView_..."
 QT_MOC_LITERAL(6, 138, 30), // "on_PushButton_AdjustPC_Clicked"
-QT_MOC_LITERAL(7, 169, 38) // "receiveSignal_lineEdit_x_retu..."
+QT_MOC_LITERAL(7, 169, 36) // "receiveSignal_lineEdit_return..."
 
     },
     "Lidar_test\0on_PushButton_ChangeColor_Clicked\0"
@@ -47,7 +47,7 @@ QT_MOC_LITERAL(7, 169, 38) // "receiveSignal_lineEdit_x_retu..."
     "on_CheckBox_Grid_stateChanged\0"
     "on_PushButton_GetCurrentView_Clicked\0"
     "on_PushButton_AdjustPC_Clicked\0"
-    "receiveSignal_lineEdit_x_returnPressed"
+    "receiveSignal_lineEdit_returnPressed"
 };
 #undef QT_MOC_LITERAL
 
@@ -70,7 +70,7 @@ static const uint qt_meta_data_Lidar_test[] = {
        4,    0,   46,    2, 0x08 /* Private */,
        5,    0,   47,    2, 0x08 /* Private */,
        6,    0,   48,    2, 0x08 /* Private */,
-       7,    1,   49,    2, 0x08 /* Private */,
+       7,    6,   49,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -78,7 +78,7 @@ static const uint qt_meta_data_Lidar_test[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,    2,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::QString,    2,    2,    2,    2,    2,    2,
 
        0        // eod
 };
@@ -94,7 +94,7 @@ void Lidar_test::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 2: _t->on_CheckBox_Grid_stateChanged(); break;
         case 3: _t->on_PushButton_GetCurrentView_Clicked(); break;
         case 4: _t->on_PushButton_AdjustPC_Clicked(); break;
-        case 5: _t->receiveSignal_lineEdit_x_returnPressed((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 5: _t->receiveSignal_lineEdit_returnPressed((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< QString(*)>(_a[3])),(*reinterpret_cast< QString(*)>(_a[4])),(*reinterpret_cast< QString(*)>(_a[5])),(*reinterpret_cast< QString(*)>(_a[6]))); break;
         default: ;
         }
     }

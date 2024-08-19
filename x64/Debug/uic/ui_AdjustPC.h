@@ -330,7 +330,12 @@ public:
 
 
         retranslateUi(AdjustPCClass);
-        QObject::connect(lineEdit_x, SIGNAL(returnPressed()), AdjustPCClass, SLOT(on_lineEdit_x_returnPressed()));
+        QObject::connect(lineEdit_x, SIGNAL(returnPressed()), AdjustPCClass, SLOT(on_lineEdit_returnPressed()));
+        QObject::connect(lineEdit_y, SIGNAL(returnPressed()), AdjustPCClass, SLOT(on_lineEdit_returnPressed()));
+        QObject::connect(lineEdit_z, SIGNAL(returnPressed()), AdjustPCClass, SLOT(on_lineEdit_returnPressed()));
+        QObject::connect(lineEdit_roll, SIGNAL(returnPressed()), AdjustPCClass, SLOT(on_lineEdit_returnPressed()));
+        QObject::connect(lineEdit_pitch, SIGNAL(returnPressed()), AdjustPCClass, SLOT(on_lineEdit_returnPressed()));
+        QObject::connect(lineEdit_yaw, SIGNAL(returnPressed()), AdjustPCClass, SLOT(on_lineEdit_returnPressed()));
 
         QMetaObject::connectSlotsByName(AdjustPCClass);
     } // setupUi

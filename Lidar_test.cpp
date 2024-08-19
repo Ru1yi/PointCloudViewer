@@ -69,6 +69,9 @@ Lidar_test::Lidar_test(QWidget* parent)
 	timer = new QTimer(this);
 	connect(timer, &QTimer::timeout, this, &Lidar_test::loadNextPCD);
 	timer->start(100);	//msec   10hz
+
+	// Connect Sub window 
+	connect(SubWidget_AdjustPC, SIGNAL(sendSignal_lineEdit_returnPressed(QString, QString, QString, QString, QString, QString)), this, SLOT(receiveSignal_lineEdit_returnPressed(QString, QString, QString, QString, QString, QString)));
 }
 
 void Lidar_test::loadNextPCD()
@@ -172,13 +175,24 @@ void Lidar_test::on_PushButton_GetCurrentView_Clicked()
 void Lidar_test::on_PushButton_AdjustPC_Clicked()
 {
 	SubWidget_AdjustPC->setWindowTitle("Adjust PointCloud Console");
-	connect(SubWidget_AdjustPC, SIGNAL(AdjustPC::sendSignal_lineEdit_x_returnPressed(QString)), this, SLOT(receiveSignal_lineEdit_x_returnPressed(QString)));
+	
 	SubWidget_AdjustPC->show();
 }
 
-void Lidar_test::receiveSignal_lineEdit_x_returnPressed(QString lineEdit_x_text)
+void Lidar_test::receiveSignal_lineEdit_returnPressed(QString lineEdit_x_text, QString lineEdit_y_text, QString lineEdit_z_text, QString lineEdit_roll_text, QString lineEdit_pitch_text, QString lineEdit_yaw_text)
 {
+	this->offset_x = lineEdit_x_text.toDouble();
+	this->offset_y = lineEdit_x_text.toDouble();
+	this->offset_z = lineEdit_x_text.toDouble();
+	this->offset_roll = lineEdit_x_text.toDouble();
+	this->offset_pitch = lineEdit_x_text.toDouble();
+	this->offset_yaw = lineEdit_x_text.toDouble();
 	qDebug() << "lineEdit_x_text: " << lineEdit_x_text << endl;
+	qDebug() << "lineEdit_y_text: " << lineEdit_y_text << endl;
+	qDebug() << "lineEdit_z_text: " << lineEdit_z_text << endl;
+	qDebug() << "lineEdit_roll_text: " << lineEdit_roll_text << endl;
+	qDebug() << "lineEdit_pitch_text: " << lineEdit_pitch_text << endl;
+	qDebug() << "lineEdit_yaw_text: " << lineEdit_yaw_text << endl;
 }
 
 Lidar_test::~Lidar_test()

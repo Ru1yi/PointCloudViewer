@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QWidget>
+#include <QDebug>
 #include "ui_AdjustPC.h"
 
 class AdjustPC : public QWidget
@@ -12,11 +13,11 @@ public:
 	~AdjustPC();
 
 signals:
-	void sendSignal_lineEdit_x_returnPressed(QString);
+	void sendSignal_lineEdit_returnPressed(QString, QString, QString, QString, QString, QString);
 
 private:
 	Ui::AdjustPCClass ui;
 
 private slots:
-	void on_lineEdit_x_returnPressed();
+	void on_lineEdit_returnPressed();
 };
